@@ -4,6 +4,10 @@ package com.academy;
 import java.io.IOException;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -13,11 +17,16 @@ import resources.BaseClass;
 
 public class HomePage extends BaseClass{
 
-	@Test(dataProvider="getData")
-	
-	public void basePageNavigation(String username,String password) throws IOException, InterruptedException {
+	@BeforeTest
+	public void launchBrowser() throws IOException {
 		driver=initilizeDriver(); //Return driver and we have stored in it driver we have defined in base class
 		driver.get(defineProperty().getProperty("URL"));
+	}
+	
+	//---------------------------------------------
+	@Test(dataProvider="getData")
+	public void basePageNavigation(String username,String password) throws IOException {
+	
 		//There are two ways to access methods of another class inheritance and creating object of another class
 		QaclickAcedemyHomePage objHomePage = new QaclickAcedemyHomePage(driver);
 		objHomePage.loginButton().click();
@@ -26,6 +35,12 @@ public class HomePage extends BaseClass{
 		objLoginPage.emailAddress().sendKeys(username);
 		objLoginPage.password().sendKeys(password);
 		objLoginPage.submit().click();	
+		
+	}
+	//-----------------------------------------------
+	@AfterTest
+	public void driverclose() {
+		driver.quit();
 	}
 
 	//Data provider that will provide data to browserLaunchTest
@@ -40,24 +55,5 @@ public class HomePage extends BaseClass{
 		data[1][1] = "12345";
 		return data;
 	}
-
-
-
-
-
-
-	/*@Test
-	public void clickLogin() throws IOException {
-		QaclickAcedemyHomePage objHomePage = new QaclickAcedemyHomePage();
-		objHomePage.driver = initilizeDriver();
-		objHomePage.driver.get("http://www.qaclickAcademy.com");
-		objHomePage.loginButton().click();
-		QaClickAcademyLoginPage objLoginPage = new QaClickAcademyLoginPage();
-		objLoginPage.emailAddress().sendKeys("Rahul");
-		objLoginPage.password().sendKeys("Mendiratta");
-		objLoginPage.submit().click();
-
-	}*/
-
 
 }

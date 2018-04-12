@@ -17,6 +17,7 @@ public class BaseClass {
 
 	public  WebDriver driver;
 	public DesiredCapabilities cap;
+	public Properties prop;
 	//-----------------------------------------
 	
 	public DesiredCapabilities capabilities() {
@@ -45,8 +46,9 @@ public class BaseClass {
 
 	}
 	
+	//Advantage we can take any value from property file without invoking the browser
 	public Properties defineProperty() throws IOException {
-		Properties prop = new Properties();
+		 prop = new Properties();
 		FileInputStream file = new FileInputStream("C:\\Users\\Rahul Mendiratta\\projectE2E\\src\\main\\java\\resources\\GlobalParameters.properties");
 		prop.load(file);
 		return prop;

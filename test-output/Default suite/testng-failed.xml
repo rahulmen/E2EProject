@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.academy.ValidateTitle">
+      <class name="com.academy.HomePage">
         <methods>
-          <include name="ValidateTitleWithAssertion"/>
+          <include name="basePageNavigation" invocation-numbers="1"/>
+          <include name="driverclose"/>
+          <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.academy.ValidateTitle -->
+      </class> <!-- com.academy.HomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
