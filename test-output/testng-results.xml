@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="70757" started-at="2018-04-12T10:38:20Z" finished-at="2018-04-12T10:39:31Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="70757" started-at="2018-04-12T10:38:20Z" finished-at="2018-04-12T10:39:31Z">
+      <class name="com.academy.HomePage">
+        <test-method status="PASS" signature="browserLaunch()[pri:0, instance:com.academy.HomePage@76a3e297]" name="browserLaunch" duration-ms="70626" started-at="2018-04-12T10:38:20Z" finished-at="2018-04-12T10:39:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+      </class> <!-- com.academy.HomePage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
