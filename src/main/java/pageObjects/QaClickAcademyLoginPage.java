@@ -14,7 +14,7 @@ public class QaClickAcademyLoginPage {
 		this.driver = driver;
 	}
 
-	public By emailAddress= By.cssSelector("input.form-control.input-hg");
+	public By emailAddress= By.id("user_email");
 	public By password = By.id("user_password");
 	public By submit = By.name("commit");
 

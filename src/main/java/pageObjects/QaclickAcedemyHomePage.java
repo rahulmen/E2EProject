@@ -15,9 +15,20 @@ public class QaclickAcedemyHomePage{
 	
 	By login = By.xpath("//i[@class='fa fa-lock fa-lg']/following-sibling::span");
 	
+	By title = By.xpath("//*[@id='content']/div/div");
+	
+	By mainLogo = By.cssSelector("div.navbar-header");
 	
 	public WebElement loginButton() {
 	return driver.findElement(login);
+	}
+	
+	public WebElement mainLogo() {
+	return driver.findElement(mainLogo);
+	}
+	
+	public WebElement title() {
+		return driver.findElement(title);
 	}
 
 }
